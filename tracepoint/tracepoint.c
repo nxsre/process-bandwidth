@@ -417,12 +417,13 @@ int tracepoint_sys_exit_socket(struct trace_event_raw_sys_exit* ctx) {
     return 0;
 }
 
-SEC("tracepoint/syscalls/sys_exit_open")
-int tracepoint_sys_exit_open(struct trace_event_raw_sys_exit* ctx) {
-    char source[] = "sys_exit_open";
-    save_fdtype_with_pfid(source, ctx, FD_TYPE_FILE);
-    return 0;
-}
+// aarch64 没有这个 syscall
+//SEC("tracepoint/syscalls/sys_exit_open")
+//int tracepoint_sys_exit_open(struct trace_event_raw_sys_exit* ctx) {
+//    char source[] = "sys_exit_open";
+//    save_fdtype_with_pfid(source, ctx, FD_TYPE_FILE);
+//    return 0;
+//}
 
 SEC("tracepoint/syscalls/sys_exit_openat")
 int tracepoint_sys_exit_openat(struct trace_event_raw_sys_exit* ctx) {
@@ -431,12 +432,13 @@ int tracepoint_sys_exit_openat(struct trace_event_raw_sys_exit* ctx) {
     return 0;
 }
 
-SEC("tracepoint/syscalls/sys_exit_creat")
-int tracepoint_sys_exit_creat(struct trace_event_raw_sys_exit* ctx) {
-    char source[] = "sys_exit_creat";
-    save_fdtype_with_pfid(source, ctx, FD_TYPE_FILE);
-    return 0;
-}
+// aarch64 没有这个 syscall
+//SEC("tracepoint/syscalls/sys_exit_creat")
+//int tracepoint_sys_exit_creat(struct trace_event_raw_sys_exit* ctx) {
+//    char source[] = "sys_exit_creat";
+//    save_fdtype_with_pfid(source, ctx, FD_TYPE_FILE);
+//    return 0;
+//}
 
 SEC("tracepoint/syscalls/sys_enter_close")
 int tracepoint_sys_enter_close(struct trace_event_raw_sys_enter* ctx) {

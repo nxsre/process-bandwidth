@@ -6,7 +6,7 @@ import (
 	"fmt"
 	"github.com/cilium/ebpf"
 	"github.com/cilium/ebpf/perf"
-	manager "github.com/ehids/ebpfmanager"
+	manager "github.com/gojue/ebpfmanager"
 	"github.com/pkg/errors"
 	"golang.org/x/sys/unix"
 	"math"
@@ -56,9 +56,9 @@ var tracepoints = []string{
 	"sys_exit_accept4",
 	"sys_exit_socket",
 
-	"sys_exit_open",
+	//"sys_exit_open",
 	"sys_exit_openat",
-	"sys_exit_creat",
+	//"sys_exit_creat",
 
 	"sys_enter_write",
 	"sys_exit_write",
